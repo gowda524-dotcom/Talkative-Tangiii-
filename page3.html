@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Two Souls One Heart</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  html,body{height:100%;margin:0;font-family:'Georgia',serif;background:linear-gradient(135deg,#a8edea,#fed6e3);display:flex;align-items:center;justify-content:center;color:#222}
+  .card{max-width:900px;width:100%;padding:36px;border-radius:18px;background:rgba(255,255,255,0.06);box-shadow:0 10px 30px rgba(0,0,0,0.12);display:flex;gap:22px;align-items:center}
+  .left{flex:1}
+  .right{width:420px}
+  h1{color:#fff;margin:0;font-size:2rem}
+  p{color:#fff;opacity:.95;margin-top:8px}
+  img{width:100%;height:300px;object-fit:cover;border-radius:12px}
+  .nav{display:flex;justify-content:space-between;margin-top:16px}
+  a.btn{background:linear-gradient(90deg,#ffb3d6,#7f6cff);color:#fff;padding:9px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+</style>
+</head>
+<body>
+  <div style="width:100%;max-width:980px;padding:12px;">
+    <div class="card">
+      <div class="left">
+        <h1>Two Souls 🌍 one heart 💖</h1>
+        <p>We laugh, we fight, we hug — but always together. You're my forever soul-sibling.</p>
+
+        <div style="margin-top:12px">
+          <audio id="audio" controls loop>
+            <source src="song3.mp3" type="audio/mpeg">
+            Your browser doesn't support audio element.
+          </audio>
+        </div>
+      </div>
+
+      <div class="right">
+        <img src="photo3.jpg" alt="photo3" onerror="this.style.filter='grayscale(60%)';this.alt='Add photo3.jpg in folder'">
+      </div>
+    </div>
+
+    <div class="nav" style="max-width:980px;margin-top:12px">
+      <a class="btn" href="page2.html">← Back</a>
+      <a class="btn" href="page4.html">Next →</a>
+    </div>
+  </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', ()=>{document.getElementById('audio').play().catch(()=>{});});
+</script>
+</body>
+</html>
