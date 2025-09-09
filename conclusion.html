@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Happy Birthday — Conclusion</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  html,body{height:100%;margin:0;font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#fbe7ff,#e6f7ff);display:flex;align-items:center;justify-content:center}
+  .wrap{max-width:980px;width:100%;padding:28px;border-radius:18px;background:rgba(255,255,255,0.04);box-shadow:0 12px 40px rgba(0,0,0,0.12);text-align:center}
+  h1{margin:0;font-size:2rem;color:#ff3c8d}
+  p{margin-top:12px;font-size:1.05rem;color:#222}
+  img{width:100%;max-width:560px;height:320px;object-fit:cover;border-radius:12px;margin-top:18px}
+  .btns{display:flex;gap:10px;justify-content:center;margin-top:18px}
+  a.btn{background:linear-gradient(90deg,#ff6fa3,#7f6cff);color:#fff;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700}
+  canvas.confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:40}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Once again Happy Birthday Talkative Tangiii 💖♾️</h1>
+    <p>Akkowww 🌍, Amma 💎 — Thank you for being with me. I promise, you are my forever Tangiiiiiii</p>
+
+    <img src="photo8.jpg" alt="photo8" onerror="this.style.filter='grayscale(60%)';this.alt='Add photo8.jpg in folder'">
+
+    <div style="margin-top:14px">
+      <audio id="audio" controls loop>
+        <source src="song9.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <div class="btns">
+      <a class="btn" href="page8.html">← Back</a>
+      <a class="btn" href="intro.html">Start Over</a>
+    </div>
+  </div>
+
+<canvas class="confetti" id="conf"></canvas>
+
+<script>
+  // try autoplay audio
+  document.addEventListener('DOMContentLoaded', ()=>{ document.getElementById('audio').play().catch(()=>{}); });
+
+  // compact confetti — standalone (no external libs)
+  (function(){
+    const canvas = document.getElementById('conf');
+    const ctx = canvas.getContext('2d');
+    let W = canvas.width = innerWidth;
+    let H = canvas.height = innerHeight;
+    const pieces = [];
+    const colors = ['#ff0a54','#ff477e','#ff85a1','#fbb1bd','#f9bec7','#f7cad0','#ffd166','#06d6a0'];
+
+    function init(){
+      for(let i=0;i<180;i++){
+        pieces.push({
+          x: Math.random()*W,
+          y: Math.random()*H - H,
+          r: (Math.random()*6)+3,
+          d: Math.random()*100,
+          color: colors[Math.floor(Math.random()*colors.length)],
+          tilt: Math.floor(Math.random()*10)-10,
+          speed: (Math.random()*2)+1
+        });
+      }
+      animate();
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      for(let i=0;i<pieces.length;i++){
+        const p = pieces[i];
+        ctx.beginPath();
+        ctx.fillStyle = p.color;
+        ctx.fillRect(p.x + p.tilt, p.y, p.r, p.r*0.6);
+      }
+    }
+    let angle = 0;
+    function update(){
+      angle += 0.01;
+      for(let i=0;i<pieces.length;i++){
+        const p = pieces[i];
+        p.tilt = Math.sin(angle + p.d)*8;
+        p.y += p.speed + Math.cos(angle+p.d)*0.5;
+        if(p.y > H + 20){
+          p.y = -10;
+          p.x = Math.random()*W;
+        }
+      }
+    }
+    function animate(){
+      draw();
+      update();
+      requestAnimationFrame(animate);
+    }
+    window.addEventListener('resize', ()=>{W = canvas.width = innerWidth; H = canvas.height = innerHeight;});
+    init();
+  })();
+</script>
+</body>
+</html>
