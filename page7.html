@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>My Caretaker</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  html,body{height:100%;margin:0;font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#c6ffdd,#fbd786);display:flex;align-items:center;justify-content:center}
+  .card{max-width:980px;width:100%;padding:28px;border-radius:16px;background:rgba(0,0,0,0.04);box-shadow:0 12px 30px rgba(0,0,0,0.12);display:flex;gap:18px;align-items:center}
+  .text{flex:1;color:#333}
+  img{width:420px;height:300px;object-fit:cover;border-radius:12px}
+  h1{margin:0;color:#ff4da6;font-size:1.9rem}
+  p{margin-top:8px}
+  .nav{display:flex;justify-content:space-between;margin-top:14px}
+  a.btn{background:linear-gradient(90deg,#ff8bd8,#7f6cff);color:#fff;padding:10px 16px;border-radius:12px;text-decoration:none}
+</style>
+</head>
+<body>
+  <div style="width:100%;max-width:980px;">
+    <div class="card">
+      <div class="text">
+        <h1>My caretaker 🤗</h1>
+        <p>Always there with love, advice and warm hugs — thank you for caring.</p>
+
+        <div style="margin-top:12px">
+          <audio id="audio" controls loop>
+            <source src="song7.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <div>
+        <img src="photo6.jpg" alt="photo6" onerror="this.style.filter='grayscale(60%)';this.alt='Add photo6.jpg in folder'">
+      </div>
+    </div>
+
+    <div class="nav" style="display:flex;justify-content:space-between;margin-top:12px">
+      <a class="btn" href="page6.html">← Back</a>
+      <a class="btn" href="page8.html">Next →</a>
+    </div>
+  </div>
+
+<script>document.addEventListener('DOMContentLoaded', ()=>{document.getElementById('audio').play().catch(()=>{});});</script>
+</body>
+</html>
