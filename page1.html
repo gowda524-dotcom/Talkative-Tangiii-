@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Happy Birthday Talkative Tangiii</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{--card:#ffffff14;--accent1:#ff5aa5;--accent2:#7f6cff}
+  html,body{height:100%;margin:0;font-family: 'Comic Sans MS', cursive, sans-serif;}
+  body{
+    display:flex;align-items:center;justify-content:center;
+    background: radial-gradient(circle at 10% 20%, #fff1 0%, transparent 10%),
+                linear-gradient(135deg,#ffecd2 0%, #fcb69f 100%);
+    color:#111;
+    padding:20px;
+  }
+  .wrap{max-width:900px;width:100%;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+  .card{background:var(--card);padding:28px;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,0.12);}
+  h1{font-size:2.1rem;margin:0 0 8px;color:#fff;text-shadow:0 4px 12px rgba(0,0,0,0.4)}
+  p{font-size:1.15rem;color:#fff;margin:0 0 16px}
+  .media{border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.18);background:#000}
+  img{width:100%;height:350px;object-fit:cover;display:block}
+  .controls{display:flex;gap:12px;justify-content:center;margin-top:12px}
+  a.btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+  a.btn[disabled]{opacity:.6;pointer-events:none}
+  .nav{grid-column:1/-1;margin-top:18px;display:flex;justify-content:space-between}
+  .messageWrap{padding:20px}
+  .messageWrap h2{margin:0 0 8px;color:#fff}
+  .overlay-deco{position:fixed;right:20px;bottom:20px;font-size:22px;opacity:0.9}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card messageWrap" style="background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));">
+      <h1>Happy Birthday Talkative Tangiii 💖♾️</h1>
+      <p style="font-size:1.05rem;color:#fff">Keep smiling forever — thank you for being with me.</p>
+
+      <div style="margin-top:12px">
+        <audio id="audio" controls loop>
+          <source src="song1.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="media">
+      <img src="photo1.jpg" alt="photo 1 placeholder" onerror="this.style.filter='grayscale(60%)';this.alt='Add photo1.jpg in folder'">
+    </div>
+
+    <div class="nav">
+      <a class="btn" href="intro.html">← Back</a>
+      <div>
+        <a class="btn" href="page2.html">Next →</a>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // try to auto-play audio; many browsers block autoplay until user interacts
+  window.addEventListener('DOMContentLoaded', ()=> {
+    const a = document.getElementById('audio');
+    a.play().catch(()=>{/* blocked */});
+  });
+</script>
+</body>
+</html>
