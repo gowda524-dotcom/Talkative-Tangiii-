@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>My Gem</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#fdfbfb,#ebedee);display:flex;align-items:center;justify-content:center}
+  .card{max-width:980px;width:100%;padding:32px;border-radius:18px;background:linear-gradient(180deg,rgba(0,0,0,0.05),rgba(255,255,255,0.02));box-shadow:0 12px 30px rgba(0,0,0,0.12);display:flex;gap:18px;align-items:center}
+  .left{flex:1;color:#222}
+  img{width:420px;height:300px;object-fit:cover;border-radius:12px}
+  h1{margin:0;color:#7b3cff;font-size:1.9rem}
+  p{margin:8px 0 0}
+  .nav{display:flex;justify-content:space-between;margin-top:18px}
+  a.btn{background:linear-gradient(90deg,#ff6fa3,#8a7bff);color:white;padding:10px 16px;border-radius:12px;text-decoration:none}
+</style>
+</head>
+<body>
+  <div style="width:100%;max-width:980px;">
+    <div class="card">
+      <div class="left">
+        <h1>My Gem 💎</h1>
+        <p>You sparkle in everything you do — my precious sister.</p>
+
+        <div style="margin-top:14px">
+          <audio id="audio" controls loop>
+            <source src="song6.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <div>
+        <img src="photo5.jpg" alt="photo5" onerror="this.style.filter='grayscale(60%)';this.alt='Add photo5.jpg in folder'">
+      </div>
+    </div>
+
+    <div class="nav" style="display:flex;justify-content:space-between;margin-top:12px">
+      <a class="btn" href="page5.html">← Back</a>
+      <a class="btn" href="page7.html">Next →</a>
+    </div>
+  </div>
+
+<script>document.addEventListener('DOMContentLoaded', ()=>{document.getElementById('audio').play().catch(()=>{});});</script>
+</body>
+</html>
